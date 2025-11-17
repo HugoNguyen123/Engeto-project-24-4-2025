@@ -17,14 +17,16 @@ Datové sady, které je možné použít pro získání vhodného datového podk
 7. czechia_price_category – Číselník kategorií potravin, které se vyskytují v našem přehledu.
    
 Číselníky sdílených informací o ČR:
- 1. czechia_region – Číselník krajů České republiky dle normy CZ-NUTS 2. 
+1. czechia_region – Číselník krajů České republiky dle normy CZ-NUTS 2. 
 2. czechia_district – Číselník okresů České republiky dle normy LAU. 
+
 Dodatečné tabulky: 
 1. countries - Všemožné informace o zemích na světě, například hlavní město, měna, národní jídlo nebo průměrná výška populace.
- 2. economies - HDP, GINI, daňová zátěž, atd. pro daný stát a rok. 
+2. economies - HDP, GINI, daňová zátěž, atd. pro daný stát a rok. 
+
 Výzkumné otázky 
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
- 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd? 
+2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd? 
 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)? 
 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
