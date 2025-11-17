@@ -1,0 +1,60 @@
+#1) Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+
+
+SELECT *
+FROM t_huu_viet_nguyen_project_SQL_primary_final;
+
+
+/*
+Pokud plat meziročně vzrostl nebo zůstal stejný potom ve sloupci growing bude 0 
+Pokud se naopak snížil tak ve sloupci growing najdeme text: salary is lower than previous year
+*/
+SELECT  
+    t1.payroll_year,
+    t1.ib_code,
+    t1.ib_name,
+    t1.salary AS salary,
+    t2.salary AS salary_nextyear,
+    CASE
+        WHEN t2.salary < t1.salary THEN 'salary is lower than previous year'
+        ELSE 'salary is growing or same'
+    END AS growing,
+    t2.salary - t1.salary AS diff
+FROM t_huu_viet_nguyen_project_SQL_primary_final t1
+JOIN t_huu_viet_nguyen_project_SQL_primary_final t2
+    ON t1.ib_code = t2.ib_code
+    AND t2.payroll_year = t1.payroll_year + 1
+ORDER BY t1.ib_code, t1.payroll_year;
+
+
+
+/*
+ Seřazení dat podle toho jestli mzdy klesaly a podle odvětví a roku
+ */
+WITH vysledek AS (
+    SELECT  
+        t1.payroll_year AS year,
+        t2.payroll_year AS nextyear,
+        t1.ib_name AS industry_branch,
+        t1.ib_code AS industry_branch_code,
+        t1.salary AS salary,
+        t2.salary AS salary_nextyear,
+        CASE
+            WHEN t2.salary < t1.salary THEN 'salary is lower than previous year'
+            ELSE 'salary is growing or same'
+        END AS growing, 
+        t2.salary - t1.salary AS difference
+    FROM t_huu_viet_nguyen_project_SQL_primary_final t1
+    JOIN t_huu_viet_nguyen_project_SQL_primary_final t2
+        ON t1.ib_code = t2.ib_code
+        AND t2.payroll_year = t1.payroll_year + 1
+)
+
+SELECT *
+FROM vysledek
+ORDER BY 
+    growing DESC,             
+    industry_branch_code, 
+    year;
+
+	
