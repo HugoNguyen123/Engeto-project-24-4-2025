@@ -33,8 +33,8 @@ ORDER BY t1.ib_code, t1.payroll_year;
  */
 WITH vysledek AS (
     SELECT  
-        t1.payroll_year AS year,
-        t2.payroll_year AS nextyear,
+        t1.payroll_year AS payroll_year,
+        t2.payroll_year AS next_payroll_year,
         t1.ib_name AS industry_branch,
         t1.ib_code AS industry_branch_code,
         t1.salary AS salary,
@@ -49,12 +49,11 @@ WITH vysledek AS (
         ON t1.ib_code = t2.ib_code
         AND t2.payroll_year = t1.payroll_year + 1
 )
-
 SELECT *
 FROM vysledek
 ORDER BY 
     growing DESC,             
     industry_branch_code, 
-    year;
+    payroll_year;
 
 	
