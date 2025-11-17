@@ -43,4 +43,5 @@ FROM potraviny p
 JOIN mzdy m USING (payroll_year)
 ORDER BY year;
 
+
 	
