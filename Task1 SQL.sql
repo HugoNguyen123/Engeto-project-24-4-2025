@@ -1,60 +1,57 @@
 #1) Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
-
 SELECT *
 FROM t_huu_viet_nguyen_project_SQL_primary_final;
-
 
 /*
 Pokud plat meziročně vzrostl nebo zůstal stejný potom ve sloupci growing bude 0 
 Pokud se naopak snížil tak ve sloupci growing najdeme text: salary is lower than previous year
 */
-SELECT  
-    t1.payroll_year,
-    t1.ib_code,
-    t1.ib_name,
-    t1.salary AS salary,
-    t2.salary AS salary_nextyear,
+DROP VIEW IF EXISTS industry_salary_with_growth;
+
+CREATE VIEW industry_salary_with_growth AS
+WITH salary_growth AS (
+    SELECT
+        ib_code,
+        ib_name,
+        payroll_year,
+        AVG(salary) AS salary,
+        LEAD(AVG(salary)) OVER (PARTITION BY ib_code ORDER BY payroll_year) AS salary_nextyear
+    FROM t_huu_viet_nguyen_project_SQL_primary_final
+    GROUP BY ib_code, ib_name, payroll_year
+)
+SELECT
+    ib_code,
+    ib_name,
+    payroll_year,
+    salary,
+    salary_nextyear,
     CASE
-        WHEN t2.salary < t1.salary THEN 'salary is lower than previous year'
-        ELSE 'salary is growing or same'
+        WHEN salary_nextyear < salary THEN 'salary is lower than previous year'
+        ELSE '0'
     END AS growing,
-    t2.salary - t1.salary AS diff
-FROM t_huu_viet_nguyen_project_SQL_primary_final t1
-JOIN t_huu_viet_nguyen_project_SQL_primary_final t2
-    ON t1.ib_code = t2.ib_code
-    AND t2.payroll_year = t1.payroll_year + 1
-ORDER BY t1.ib_code, t1.payroll_year;
-
-
+    salary_nextyear - salary AS diff
+FROM salary_growth
+WHERE salary_nextyear IS NOT NULL
+ORDER BY 
+    CASE WHEN salary_nextyear - salary < 0 THEN 1 ELSE 0 END DESC,
+    ib_code,
+    payroll_year;
 
 /*
  Seřazení dat podle toho jestli mzdy klesaly a podle odvětví a roku
  */
-WITH vysledek AS (
-    SELECT  
-        t1.payroll_year AS payroll_year,
-        t2.payroll_year AS next_payroll_year,
-        t1.ib_name AS industry_branch,
-        t1.ib_code AS industry_branch_code,
-        t1.salary AS salary,
-        t2.salary AS salary_nextyear,
-        CASE
-            WHEN t2.salary < t1.salary THEN 'salary is lower than previous year'
-            ELSE 'salary is growing or same'
-        END AS growing, 
-        t2.salary - t1.salary AS difference
-    FROM t_huu_viet_nguyen_project_SQL_primary_final t1
-    JOIN t_huu_viet_nguyen_project_SQL_primary_final t2
-        ON t1.ib_code = t2.ib_code
-        AND t2.payroll_year = t1.payroll_year + 1
-)
 
+SELECT * 
+FROM industry_salary_with_growth
+
+-- Příklad konkrétních odvětví a let
 SELECT *
-FROM vysledek
+FROM industry_salary_with_growth
+WHERE ib_code IN ('A', 'B', 'C')  -- konkrétní odvětví pro ukázku
+  AND payroll_year IN (2015, 2016, 2017)  -- konkrétní roky
 ORDER BY 
-    growing DESC,             
-    industry_branch_code, 
+    CASE WHEN salary_nextyear - salary < 0 THEN 1 ELSE 0 END DESC,
+    ib_code,
     payroll_year;
-
 	
