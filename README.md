@@ -41,18 +41,18 @@ Pro každý úkol je vytvořený jednotlivý soubor (Task1 - Task5). Zároveň j
 1. Růst mezd v odvětvích 
 - Prozkoumali jsme data a zjistili jsme, že mzdy ve většině odvětví průběžně rostou v průběhu let. Nicméně ve vybraných odvětvích jsme také zaznamenali pokles mezd.
  -Ve většině odvětví bylo nalezeno období, ve kterém mzda meziročně klesala. To si můžeme nádherně zobrazit ve sloupci growing 
-- pokud je tento sloupce vyplněn textem znamená to, že mzda meziročně klesala. V ostatních případech mzda meziročně rostla.
+- pokud je tento sloupec vyplněn textem znamená to, že mzda meziročně klesala. V ostatních případech mzda meziročně rostla.
 
 2. Kolik litrů mléka a kilogramů chleba lze koupit za první a poslední srovnatelné období? 
 - Analyzovali jsme dostupná data o cenách mléka a chleba za první a poslední srovnatelné období. 
 - Na základě těchto dat jsme vypočítali, že v prvním období (rok 2006) jsme si mohli koupit 1192 kg chleba nebo 1331 litrů mléka. 
-- V posledním období (rok 2018) jsme si mohli koupit 1300 kg chleba nebo 1590 litrů mléka, tedy více než v prvním období
+- V posledním období (rok 2018) jsme si mohli koupit 1300 kg chleba nebo 1590 litrů mléka, tedy více než v prvním období.
 
 3. Která kategorie potravin zdražuje nejpomaleji
- - Identifikovali jsme různé kategorie potravin a analyzovali jsme jejich ceny v průběhu let. Na základě meziročních změn jsme zjistili, že kategorii, která zdražuje nejpomaleji jsou banány žluté. Meziroční procentuální nárust této kategorie je průměrně 0,81% - Zároveň jsme vypozorovali, že mezi sledovanými daty jsou dokonce dvě kategorie, u kterých cena meziročně klesala. A to jsou: Rajská jablka červená kulatá a Cukr krystalový
+ - Identifikovali jsme různé kategorie potravin a analyzovali jsme jejich ceny v průběhu let. Na základě meziročních změn jsme zjistili, že kategorii, která zdražuje nejpomaleji jsou banány žluté. Meziroční procentuální nárust této kategorie je průměrně 0,81% - Zároveň jsme vypozorovali, že mezi sledovanými daty jsou dokonce dvě kategorie, u kterých cena meziročně klesala. A to jsou: Rajská jablka červená kulatá a Cukr krystal.
 
 4. Porovnání růstu cen potravin a mezd 
-- Prozkoumali jsme data o meziročních změnách cen potravin a mezd a hledali rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %). Výsledky ukazují, že takový rok neexistuje 
+- Prozkoumali jsme data o meziročních změnách cen potravin a mezd a hledali rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %). Výsledky ukazují, že takový rok neexistuje. 
 
 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? - Prostudovali jsme data o výšce HDP v jednotlivých letech a analyzovali jsme jejich vztah k mzdám a cenám potravin. Zajímalo nás, zda výrazný nárůst HDP v jednom roce ovlivní mzdy a ceny potravin ve stejném nebo následujícím roce výraznějším růstem. 
 
