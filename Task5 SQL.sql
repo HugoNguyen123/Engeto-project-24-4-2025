@@ -1,7 +1,7 @@
 /*5) Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, 
 projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?*/
 
-mzdy a ceny potravin
+--mzdy a ceny potravin
 SELECT 
     t1.payroll_year AS payroll_year,
     AVG(t1.salary) AS salary,
@@ -18,7 +18,7 @@ WHERE t1.ib_code IS NOT NULL
 GROUP BY t1.payroll_year
 ORDER BY t1.payroll_year;
 
-HDP
+--HDP
 SELECT 
     secondary1.country,
     secondary1.year AS rok,
