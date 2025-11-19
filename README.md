@@ -45,8 +45,8 @@ Pro každý úkol je vytvořený jednotlivý soubor (Task1 - Task5). Zároveň j
 
 2. Kolik litrů mléka a kilogramů chleba lze koupit za první a poslední srovnatelné období? 
 - Analyzovali jsme dostupná data o cenách mléka a chleba za první a poslední srovnatelné období. 
-- Na základě těchto dat jsme vypočítali, že v prvním období (rok 2006) jsme si mohli koupit 1192 kg chleba a 1331 litrů mléka. 
-- V posledním období (rok 2018) jsme si mohli koupit 1300 kg chleba a 1590 litrů mléka, tedy více než v prvním období
+- Na základě těchto dat jsme vypočítali, že v prvním období (rok 2006) jsme si mohli koupit 1192 kg chleba nebo 1331 litrů mléka. 
+- V posledním období (rok 2018) jsme si mohli koupit 1300 kg chleba nebo 1590 litrů mléka, tedy více než v prvním období
 
 3. Která kategorie potravin zdražuje nejpomaleji
  - Identifikovali jsme různé kategorie potravin a analyzovali jsme jejich ceny v průběhu let. Na základě meziročních změn jsme zjistili, že kategorii, která zdražuje nejpomaleji jsou banány žluté. Meziroční procentuální nárust této kategorie je průměrně 0,81% - Zároveň jsme vypozorovali, že mezi sledovanými daty jsou dokonce dvě kategorie, u kterých cena meziročně klesala. A to jsou: Rajská jablka červená kulatá a Cukr krystalový
